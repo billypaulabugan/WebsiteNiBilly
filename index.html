@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website ni Billy</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #222222;
+  }
+
+  /* Top bar */
+  nav {
+    background: #1a7a00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+  }
+  nav .title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 18px; }
+  nav ul a {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  nav ul a:hover, nav ul a.active { text-decoration: underline; }
+
+  /* Pages */
+  main { flex: 1; padding: 30px 20px 40px; }
+  .page { display: none; max-width: 800px; margin: 0 auto; }
+  .page.active { display: block; }
+  h1 {
+    font-family: Cambria, Georgia, "Times New Roman", serif;
+    font-size: 3rem;
+    text-align: center;
+    margin: 10px 0 30px;
+  }
+  h2 {
+    font-family: Cambria, Georgia, "Times New Roman", serif;
+    color: #1a7a00;
+    font-size: 1.6rem;
+    margin: 0 0 10px;
+  }
+  p { font-size: 1.05rem; line-height: 1.7; margin: 0; }
+
+  /* Sections (cards) */
+  .section {
+    background: #f1fbf1;
+    border-left: 6px solid #1a7a00;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+
+  /* Quote with picture */
+  .quote-box {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .quote-box img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #1a7a00;
+    flex-shrink: 0;
+  }
+  blockquote { margin: 0; }
+  blockquote p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 10px;
+    font-style: normal;
+    font-weight: bold;
+    color: #1a7a00;
+  }
+
+  /* About page */
+  h3 { font-family: Cambria, Georgia, serif; color: #1a7a00; font-size: 1.2rem; margin: 16px 0 6px; }
+  .section p + p { margin-top: 12px; }
+  .section h3:first-of-type { margin-top: 0; }
+
+  /* About page photos */
+  .who { display: flex; align-items: center; gap: 24px; }
+  .who img { width: 190px; height: 190px; object-fit: cover; object-position: 50% 30%; border-radius: 50%; border: 4px solid #1a7a00; flex-shrink: 0; }
+  .photo { display: block; width: 100%; max-height: 380px; object-fit: cover; border-radius: 8px; border: 3px solid #1a7a00; margin-top: 12px; }
+  .photo-row { display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+  .photo-row img { flex: 1 1 200px; min-width: 0; width: 100%; height: 260px; object-fit: cover; border-radius: 8px; border: 3px solid #1a7a00; }
+
+  /* Bottom bar */
+  footer {
+    background: #90ee90;
+    color: #1a7a00;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 4px;
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 2.2rem; }
+    .quote-box { flex-direction: column; text-align: center; }
+    .who { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="title" href="#home" data-page="home">Website ni Billy</a>
+  <ul>
+    <li><a href="#home" data-page="home">Home</a></li>
+    <li><a href="#about" data-page="about">About Me</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page active" id="home">
+    <h1>Welcome to My Website</h1>
+
+    <div class="section">
+      <h2>Introduction</h2>
+      <p>Welcome to my website! I am still a beginner in web development, and this website is part of my journey in learning, creating, and improving my skills. I may still have a lot to learn, but I believe that every small step helps me grow and become better.</p>
+    </div>
+
+    <div class="section">
+      <h2>A Quote I Believe In</h2>
+      <div class="quote-box">
+        <img src="quote-picture.jpg" alt="Black and white photo of a marble bust of a bearded man">
+        <blockquote>
+          <p>&ldquo;We are what we repeatedly do. Excellence, then, is not an act, but a habit.&rdquo;</p>
+          <cite>&mdash; Aristotle</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>My Interpretation</h2>
+      <p>I believe this quote means that becoming good at something takes practice, patience, and consistency. As a beginner, I know I won't be perfect right away, but by continuing to learn and practice, I can improve little by little.</p>
+    </div>
+  </div>
+
+  <div class="page" id="about">
+    <h1>About Me</h1>
+
+    <div class="section">
+      <h2>Who Am I?</h2>
+      <div class="who">
+        <img src="images/me.jpg" alt="Billy giving a thumbs up while lying on a bed">
+        <div>
+      <p>Hello! My name is Billy Paul C. Abugan, and I am 22 years old. I come from Tubod, Lanao del Norte, a place known as the &ldquo;Land of Beauty and Bounty.&rdquo; I am a simple person who enjoys discovering new things, learning from experiences, and improving myself one step at a time.</p>
+      <p>I am still on a journey of learning and growth. I may not know everything yet, but I believe that every experience, challenge, and mistake helps shape me into a better version of myself.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Fun Fact About Me</h2>
+      <p>One fun fact about me is that I enjoy drumming and gaming. I like expressing my energy through music, while gaming gives me a different kind of excitement and challenge. Whether I'm behind the drums or playing a game on my phone, I always find a way to enjoy my free time.</p>
+    </div>
+
+    <div class="section">
+      <h2>My Hobbies</h2>
+      <h3>Drumming</h3>
+      <p>Drumming is one of my favorite hobbies because I enjoy the rhythm, energy, and creativity that come with it. It allows me to express myself through music and helps me relax while having fun.</p>
+      <div class="photo-row">
+        <img src="images/drumming-1.jpg" alt="Drummer playing an electronic drum kit, seen from above">
+        <img src="images/drumming-2.jpg" alt="Drummer raising crossed drumsticks on a smoky stage">
+      </div>
+      <h3>Gaming</h3>
+      <p>I also enjoy playing Call of Duty: Mobile. I like the excitement of every match, the challenge of improving my skills, and the fun of competing with other players. For me, gaming is not just entertainment&mdash;it is also a way to relax and enjoy my free time.</p>
+      <div class="photo-row">
+        <img src="images/gaming-1.jpg" alt="Call of Duty: Mobile Battle Royale victory screen showing #1 of 25 and 9 kills">
+        <img src="images/gaming-2.jpg" alt="Call of Duty: Mobile multiplayer lobby with a squad of soldiers">
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>My Favorite Foods</h2>
+      <p>When it comes to food, I am definitely a fan of burgers, pizza, and fast food. I enjoy food that is simple, delicious, and satisfying.</p>
+      <img class="photo" style="max-height:460px" src="images/food-1.jpg" alt="Fast food spread with fried chicken, spaghetti, nuggets, fries and a burger">
+      <p>But if there is one dessert that stands out above the rest, it would definitely be mango float. It is one of my absolute favorites because of its sweet, creamy, and refreshing taste.</p>
+      <img class="photo" style="max-height:460px" src="images/food-2.jpg" alt="Slice of mango float with graham crumbs and fresh mango">
+    </div>
+
+    <div class="section">
+      <h2>A Little More About Me</h2>
+      <p>I may still be learning and figuring things out, but I enjoy the process. I believe that life is not about being perfect from the beginning&mdash;it is about starting, learning, failing, trying again, and continuing to move forward.</p>
+    </div>
+
+    <div class="section">
+      <h2>My Journey Continues</h2>
+      <p>This website is more than just a project. It represents a small part of my journey as a learner and as a person. I know there are still many things I need to learn, but I am willing to take every step along the way.</p>
+      <p>I may be a beginner today, but every expert was once a beginner. My journey is just beginning, and I believe the best is yet to come.</p>
+    </div>
+  </div>
+</main>
+
+<footer>&copy; Copyright Website ni Billy. All Rights Reserved.</footer>
+
+<script>
+  var links = document.querySelectorAll('[data-page]');
+  var pages = document.querySelectorAll('.page');
+
+  function showPage(name) {
+    if (!document.getElementById(name)) name = 'home';
+    pages.forEach(function (p) { p.classList.toggle('active', p.id === name); });
+    document.querySelectorAll('nav ul a').forEach(function (a) {
+      a.classList.toggle('active', a.getAttribute('data-page') === name);
+    });
+  }
+
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      location.hash = a.getAttribute('data-page');
+    });
+  });
+
+  window.addEventListener('hashchange', function () {
+    showPage(location.hash.replace('#', ''));
+  });
+
+  showPage(location.hash.replace('#', '') || 'home');
+</script>
+</body>
+</html>
